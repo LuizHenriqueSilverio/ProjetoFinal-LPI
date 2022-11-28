@@ -17,14 +17,10 @@
       "MySqlConnector/2.2.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/MySqlConnector.dll": {}
         },
         "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/MySqlConnector.dll": {}
         }
       }
     }
@@ -83,23 +79,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luizh\\.nuget\\packages\\": {}
+    "C:\\Users\\02239263610\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Downloads\\REPOSITORIOS DO IFSULDEMINAS\\ProjetoFinal-LPI\\AgendaMedica\\AgendaMedica.csproj",
+      "projectUniqueName": "C:\\Users\\02239263610\\Desktop\\ProjetoFinal-LPI\\AgendaMedica.csproj",
       "projectName": "AgendaMedica",
-      "projectPath": "E:\\Downloads\\REPOSITORIOS DO IFSULDEMINAS\\ProjetoFinal-LPI\\AgendaMedica\\AgendaMedica.csproj",
-      "packagesPath": "C:\\Users\\luizh\\.nuget\\packages\\",
-      "outputPath": "E:\\Downloads\\REPOSITORIOS DO IFSULDEMINAS\\ProjetoFinal-LPI\\AgendaMedica\\obj\\",
+      "projectPath": "C:\\Users\\02239263610\\Desktop\\ProjetoFinal-LPI\\AgendaMedica.csproj",
+      "packagesPath": "C:\\Users\\02239263610\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\02239263610\\Desktop\\ProjetoFinal-LPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\luizh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\02239263610\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -136,8 +137,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -149,7 +149,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,6 @@
-﻿namespace AgendaMedica
+namespace AgendaMedica
 {
-	partial class Form1
+	partial class formPrincipal
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -28,111 +28,150 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.painelMenu = new System.Windows.Forms.Panel();
+            this.btn_Consultas = new FontAwesome.Sharp.IconButton();
+            this.btn_Pacientes = new FontAwesome.Sharp.IconButton();
+            this.btn_Medicos = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
+            this.btn_Icone = new FontAwesome.Sharp.IconPictureBox();
+            this.painelTitulo = new System.Windows.Forms.Panel();
+            this.painelMenu.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Icone)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // painelMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(58)))));
-            this.panel1.Controls.Add(this.iconButton3);
-            this.panel1.Controls.Add(this.iconButton2);
-            this.panel1.Controls.Add(this.iconButton1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 592);
-            this.panel1.TabIndex = 0;
+            this.painelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(58)))));
+            this.painelMenu.Controls.Add(this.btn_Consultas);
+            this.painelMenu.Controls.Add(this.btn_Pacientes);
+            this.painelMenu.Controls.Add(this.btn_Medicos);
+            this.painelMenu.Controls.Add(this.panel2);
+            this.painelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.painelMenu.Location = new System.Drawing.Point(0, 0);
+            this.painelMenu.Name = "painelMenu";
+            this.painelMenu.Size = new System.Drawing.Size(220, 592);
+            this.painelMenu.TabIndex = 0;
+            // 
+            // btn_Consultas
+            // 
+            this.btn_Consultas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Consultas.FlatAppearance.BorderSize = 0;
+            this.btn_Consultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Consultas.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Consultas.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.btn_Consultas.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Consultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Consultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Consultas.Location = new System.Drawing.Point(0, 260);
+            this.btn_Consultas.Name = "btn_Consultas";
+            this.btn_Consultas.Size = new System.Drawing.Size(220, 60);
+            this.btn_Consultas.TabIndex = 3;
+            this.btn_Consultas.Text = "Consultas";
+            this.btn_Consultas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Consultas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Consultas.UseVisualStyleBackColor = true;
+            this.btn_Consultas.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
+            // btn_Pacientes
+            // 
+            this.btn_Pacientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Pacientes.FlatAppearance.BorderSize = 0;
+            this.btn_Pacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pacientes.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Pacientes.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btn_Pacientes.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Pacientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Pacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Pacientes.Location = new System.Drawing.Point(0, 200);
+            this.btn_Pacientes.Name = "btn_Pacientes";
+            this.btn_Pacientes.Size = new System.Drawing.Size(220, 60);
+            this.btn_Pacientes.TabIndex = 2;
+            this.btn_Pacientes.Text = "Pacientes";
+            this.btn_Pacientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Pacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Pacientes.UseVisualStyleBackColor = true;
+            this.btn_Pacientes.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // btn_Medicos
+            // 
+            this.btn_Medicos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Medicos.FlatAppearance.BorderSize = 0;
+            this.btn_Medicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Medicos.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Medicos.IconChar = FontAwesome.Sharp.IconChar.UserDoctor;
+            this.btn_Medicos.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btn_Medicos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Medicos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Medicos.Location = new System.Drawing.Point(0, 140);
+            this.btn_Medicos.Name = "btn_Medicos";
+            this.btn_Medicos.Size = new System.Drawing.Size(220, 60);
+            this.btn_Medicos.TabIndex = 1;
+            this.btn_Medicos.Text = "Médicos";
+            this.btn_Medicos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Medicos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Medicos.UseVisualStyleBackColor = true;
+            this.btn_Medicos.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_Icone);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 140);
             this.panel2.TabIndex = 1;
             // 
-            // iconButton1
+            // btn_Icone
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserDoctor;
-            this.iconButton1.IconColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 140);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(220, 60);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "Médicos";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btn_Icone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(58)))));
+            this.btn_Icone.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_Icone.IconChar = FontAwesome.Sharp.IconChar.SuitcaseMedical;
+            this.btn_Icone.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_Icone.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Icone.IconSize = 122;
+            this.btn_Icone.Location = new System.Drawing.Point(0, 12);
+            this.btn_Icone.Name = "btn_Icone";
+            this.btn_Icone.Size = new System.Drawing.Size(217, 122);
+            this.btn_Icone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Icone.TabIndex = 1;
+            this.btn_Icone.TabStop = false;
+            this.btn_Icone.Click += new System.EventHandler(this.btn_Icone_Click);
             // 
-            // iconButton2
+            // painelTitulo
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton2.IconColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 200);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(220, 60);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "Pacientes";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.painelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.painelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.painelTitulo.Location = new System.Drawing.Point(220, 0);
+            this.painelTitulo.Name = "painelTitulo";
+            this.painelTitulo.Size = new System.Drawing.Size(676, 75);
+            this.painelTitulo.TabIndex = 1;
             // 
-            // iconButton3
-            // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.iconButton3.IconColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 260);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(220, 60);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "Consultas";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 592);
-            this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.Controls.Add(this.painelTitulo);
+            this.Controls.Add(this.painelMenu);
+            this.Name = "formPrincipal";
+            this.Text = "Agenda Médica";
+            this.Load += new System.EventHandler(this.formPrincipal_Load);
+            this.painelMenu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Icone)).EndInit();
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private Panel panel1;
-		private FontAwesome.Sharp.IconButton iconButton3;
-		private FontAwesome.Sharp.IconButton iconButton2;
-		private FontAwesome.Sharp.IconButton iconButton1;
+		private Panel painelMenu;
+		private FontAwesome.Sharp.IconButton btn_Consultas;
+		private FontAwesome.Sharp.IconButton btn_Pacientes;
+		private FontAwesome.Sharp.IconButton btn_Medicos;
 		private Panel panel2;
+		private FontAwesome.Sharp.IconPictureBox btn_Icone;
+		private Panel painelTitulo;
 	}
 }

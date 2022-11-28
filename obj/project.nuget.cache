@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a/7l4s3xqIdFuCInxtnYRmq1jHMuvfIHlIVz8Hqq56l3L3DwcUJBv21/enpeyTbc08OCVPQEPTK2uoWMUv5DQg==",
+  "dgSpecHash": "E9kooHZQ9ZMr8EGM0eARJGlWGGUGHdbq7Mv0XVf4dHUVv1ti583SckYSWTjgQk7bY6RSaT7QpuyzedWlKCeYdA==",
   "success": true,
-  "projectFilePath": "E:\\Downloads\\REPOSITORIOS DO IFSULDEMINAS\\ProjetoFinal-LPI\\AgendaMedica\\AgendaMedica.csproj",
+  "projectFilePath": "C:\\Users\\02239263610\\Desktop\\ProjetoFinal-LPI\\AgendaMedica.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\luizh\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512",
-    "C:\\Users\\luizh\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"
+    "C:\\Users\\02239263610\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512",
+    "C:\\Users\\02239263610\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"
   ],
   "logs": []
 }
