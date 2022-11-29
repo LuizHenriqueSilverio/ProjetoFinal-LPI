@@ -1,6 +1,8 @@
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Drawing;
+using MySqlConnector;
+using System.Data;
 
 namespace AgendaMedica
 {
@@ -53,9 +55,34 @@ namespace AgendaMedica
 			}
 		}
 
+		private void listaMedico()
+		{
+			ConectaBanco con = new ConectaBanco(); // instancia o ConectaBanco
+			DataTable tabelaDados = new DataTable(); // instancia uma tabela virtual, que vai receber a tabela virtual de outra função
+			tabelaDados = con.listaMedicos();
+			cbMedico.DataSource = tabelaDados; // especifica a fonte de dados
+			cbMedico.DisplayMember = "nome"; // texto que será mostrado
+			cbMedico.ValueMember = "codMedicos"; // qual valor que será guardado quando selecionado
+			//lblmsgerro.Text = con.mensagem;
+			cbMedico.Text = "";
+		}
+
+		private void listaPaciente()
+		{
+			ConectaBanco con = new ConectaBanco(); // instancia o ConectaBanco
+			DataTable tabelaDados = new DataTable(); // instancia uma tabela virtual, que vai receber a tabela virtual de outra função
+			tabelaDados = con.listaPacientes();
+			cbPaciente.DataSource = tabelaDados; // especifica a fonte de dados
+			cbPaciente.DisplayMember = "nome"; // texto que será mostrado
+			cbPaciente.ValueMember = "codPacientes"; // qual valor que será guardado quando selecionado
+			//lblmsgerro.Text = con.mensagem;
+			cbPaciente.Text = "";
+		}
+
 		private void formPrincipal_Load(object sender, EventArgs e)
 		{
-
+			listaMedico();
+			listaPaciente();
 		}
 
 		private void iconButton1_Click(object sender, EventArgs e)
