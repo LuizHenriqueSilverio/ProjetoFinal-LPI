@@ -28,6 +28,8 @@ namespace AgendaMedica
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.painelMenu = new System.Windows.Forms.Panel();
             this.btn_Listar = new FontAwesome.Sharp.IconButton();
             this.btn_Cadastrar = new FontAwesome.Sharp.IconButton();
@@ -50,12 +52,13 @@ namespace AgendaMedica
             this.txtdatahora = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabListar = new System.Windows.Forms.TabPage();
-            this.tabAlterar = new System.Windows.Forms.TabPage();
-            this.dgConsultas = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnExcluir = new FontAwesome.Sharp.IconButton();
             this.btnAlterar = new FontAwesome.Sharp.IconButton();
+            this.btnExcluir = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dgConsultas = new System.Windows.Forms.DataGridView();
+            this.tabAlterar = new System.Windows.Forms.TabPage();
+            this.lblmsgerro = new System.Windows.Forms.Label();
             this.painelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Icone)).BeginInit();
@@ -226,6 +229,7 @@ namespace AgendaMedica
             this.btnConfirmaCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmaCadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfirmaCadastro.UseVisualStyleBackColor = true;
+            this.btnConfirmaCadastro.Click += new System.EventHandler(this.btnConfirmaCadastro_Click);
             // 
             // txtmotivo
             // 
@@ -341,44 +345,23 @@ namespace AgendaMedica
             this.tabListar.TabIndex = 1;
             this.tabListar.Text = "Listar";
             // 
-            // tabAlterar
+            // btnAlterar
             // 
-            this.tabAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.tabAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.tabAlterar.Location = new System.Drawing.Point(4, 24);
-            this.tabAlterar.Name = "tabAlterar";
-            this.tabAlterar.Size = new System.Drawing.Size(745, 421);
-            this.tabAlterar.TabIndex = 2;
-            this.tabAlterar.Text = "Alterar";
-            this.tabAlterar.Click += new System.EventHandler(this.tabAlterar_Click);
-            // 
-            // dgConsultas
-            // 
-            this.dgConsultas.BackgroundColor = System.Drawing.Color.White;
-            this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgConsultas.Location = new System.Drawing.Point(6, 108);
-            this.dgConsultas.Name = "dgConsultas";
-            this.dgConsultas.ReadOnly = true;
-            this.dgConsultas.RowTemplate.Height = 25;
-            this.dgConsultas.Size = new System.Drawing.Size(733, 245);
-            this.dgConsultas.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(34, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Buscar:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(92, 35);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(292, 23);
-            this.txtBuscar.TabIndex = 3;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnAlterar.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.btnAlterar.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnAlterar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(574, 13);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(114, 65);
+            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
@@ -398,23 +381,66 @@ namespace AgendaMedica
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // btnAlterar
+            // txtBuscar
             // 
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnAlterar.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.btnAlterar.IconColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnAlterar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(574, 13);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(114, 65);
-            this.btnAlterar.TabIndex = 5;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.txtBuscar.Location = new System.Drawing.Point(92, 35);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(292, 23);
+            this.txtBuscar.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(34, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Buscar:";
+            // 
+            // dgConsultas
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgConsultas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.dgConsultas.Location = new System.Drawing.Point(6, 108);
+            this.dgConsultas.Name = "dgConsultas";
+            this.dgConsultas.ReadOnly = true;
+            this.dgConsultas.RowTemplate.Height = 25;
+            this.dgConsultas.Size = new System.Drawing.Size(733, 245);
+            this.dgConsultas.TabIndex = 0;
+            // 
+            // tabAlterar
+            // 
+            this.tabAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabAlterar.Location = new System.Drawing.Point(4, 24);
+            this.tabAlterar.Name = "tabAlterar";
+            this.tabAlterar.Size = new System.Drawing.Size(745, 421);
+            this.tabAlterar.TabIndex = 2;
+            this.tabAlterar.Text = "Alterar";
+            this.tabAlterar.Click += new System.EventHandler(this.tabAlterar_Click);
+            // 
+            // lblmsgerro
+            // 
+            this.lblmsgerro.AutoSize = true;
+            this.lblmsgerro.ForeColor = System.Drawing.Color.White;
+            this.lblmsgerro.Location = new System.Drawing.Point(272, 87);
+            this.lblmsgerro.Name = "lblmsgerro";
+            this.lblmsgerro.Size = new System.Drawing.Size(38, 15);
+            this.lblmsgerro.TabIndex = 3;
+            this.lblmsgerro.Text = "label7";
             // 
             // formPrincipal
             // 
@@ -422,6 +448,7 @@ namespace AgendaMedica
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(973, 592);
+            this.Controls.Add(this.lblmsgerro);
             this.Controls.Add(this.painelPrincipal);
             this.Controls.Add(this.painelTitulo);
             this.Controls.Add(this.painelMenu);
@@ -441,6 +468,7 @@ namespace AgendaMedica
             this.tabListar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsultas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -474,5 +502,6 @@ namespace AgendaMedica
         private TextBox txtBuscar;
         private Label label6;
         private DataGridView dgConsultas;
-    }
+		private Label lblmsgerro;
+	}
 }

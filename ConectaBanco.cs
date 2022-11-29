@@ -54,5 +54,53 @@ namespace AgendaMedica
 				conexao.Close();
 			}
 		}// fim lista_pacientes
+
+		public DataTable listaConsultas()
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_listaConsultas", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			try
+			{
+				conexao.Open();
+				MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+				DataTable tabela = new DataTable();
+				da.Fill(tabela);
+				return tabela;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro: " + e.Message;
+				return null;
+			}
+			finally
+			{
+				conexao.Close();
+			}
+		}// fim lista_consultas
+
+		public bool insereConsulta(Consulta c)
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_insereConsulta", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-mm-dd HH:mm:ss"));
+			cmd.Parameters.AddWithValue("motivo", c.Motivo);
+			cmd.Parameters.AddWithValue("medicos_codmedicos", c.Medicos);
+			cmd.Parameters.AddWithValue("paciente_codpacientes", c.Clientes);
+			try
+			{
+				conexao.Open();
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro: " + e.Message;
+				return false;
+			}
+			finally
+			{
+				conexao.Close();
+			}// fim insere_consultas
+		}
 	}
 }

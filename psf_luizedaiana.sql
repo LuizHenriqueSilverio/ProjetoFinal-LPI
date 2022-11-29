@@ -1,18 +1,15 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.24-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.1.0.6537
+-- Versão do servidor:           10.1.35-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win32
+-- HeidiSQL Versão:              11.0.0.5919
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Copiando estrutura do banco de dados para psf_luizedaiana
@@ -33,9 +30,14 @@ CREATE TABLE IF NOT EXISTS `consultas` (
   KEY `fk_CONSULTAS_PACIENTES1_idx` (`PACIENTES_codPACIENTES`),
   CONSTRAINT `fk_CONSULTAS_MEDICOS` FOREIGN KEY (`MEDICOS_codMEDICOS`) REFERENCES `medicos` (`codMEDICOS`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_CONSULTAS_PACIENTES1` FOREIGN KEY (`PACIENTES_codPACIENTES`) REFERENCES `pacientes` (`codPACIENTES`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.consultas: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.consultas: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
+INSERT INTO `consultas` (`codCONSULTA`, `dataHora`, `motivo`, `MEDICOS_codMEDICOS`, `PACIENTES_codPACIENTES`) VALUES
+	(21, '2022-11-25 07:30:00', 'Febre e dor de garganta', 1, 2),
+	(22, '0000-00-00 00:00:00', 'Dores intensas de barriga, febre.', 1, 2);
+/*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela psf_luizedaiana.medicos
 DROP TABLE IF EXISTS `medicos`;
@@ -45,9 +47,13 @@ CREATE TABLE IF NOT EXISTS `medicos` (
   `crm` varchar(45) NOT NULL,
   `especialidade` varchar(200) NOT NULL,
   PRIMARY KEY (`codMEDICOS`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.medicos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.medicos: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
+INSERT INTO `medicos` (`codMEDICOS`, `nome`, `crm`, `especialidade`) VALUES
+	(1, 'Tekomo Nakama', '69420', 'Clínico Geral');
+/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela psf_luizedaiana.pacientes
 DROP TABLE IF EXISTS `pacientes`;
@@ -58,9 +64,13 @@ CREATE TABLE IF NOT EXISTS `pacientes` (
   `telefone` varchar(45) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   PRIMARY KEY (`codPACIENTES`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.pacientes: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.pacientes: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
+INSERT INTO `pacientes` (`codPACIENTES`, `cpf`, `nome`, `telefone`, `endereco`) VALUES
+	(2, '123.456.789-10', 'Kabe Sadul Meup-al', '(35)99999-9999', 'Rua dos Bobos, Nº 0');
+/*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 
 -- Copiando estrutura para procedure psf_luizedaiana.proc_alteraConsulta
 DROP PROCEDURE IF EXISTS `proc_alteraConsulta`;
@@ -175,15 +185,14 @@ BEGIN
 		`dataHora`,
 		`motivo`,
 		`MEDICOS_codMEDICOS`,
-		`PACIENTES_codPACIENTES`
-    )
-	VALUES
-	(
+		`PACIENTES_codPACIENTES`)
+	VALUES(
 		dataHora,
 		motivo,
 		Medicos_codMedicos,
-		Pacientes_codPacientes
-    );
+		Paciente_codPacientes
+	);
+
 
 END//
 DELIMITER ;
@@ -306,7 +315,7 @@ BEGIN
            C.motivo AS 'Motivo',
            M.nome AS 'Nome do Médico',
            P.nome AS 'Nome do Paciente'
-           FROM CONSULTA AS C
+           FROM CONSULTAS AS C
            INNER JOIN MEDICOS AS M
            INNER JOIN PACIENTES AS P
            ON C.MEDICOS_codMEDICOS = M.codMEDICOS
@@ -370,9 +379,9 @@ CREATE TABLE IF NOT EXISTS `receitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela psf_luizedaiana.receitas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `receitas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `receitas` ENABLE KEYS */;
 
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

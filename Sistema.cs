@@ -79,10 +79,18 @@ namespace AgendaMedica
 			cbPaciente.Text = "";
 		}
 
+		private void listaConsulta()
+		{
+			ConectaBanco con = new ConectaBanco();
+			dgConsultas.DataSource = con.listaConsultas();
+			lblmsgerro.Text = con.mensagem;
+		}
+
 		private void formPrincipal_Load(object sender, EventArgs e)
 		{
 			listaMedico();
 			listaPaciente();
+			listaConsulta();
 		}
 
 		private void iconButton1_Click(object sender, EventArgs e)
@@ -126,6 +134,27 @@ namespace AgendaMedica
 		private void btnSair_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
+		}
+
+		private void btnConfirmaCadastro_Click(object sender, EventArgs e)
+		{
+			Consulta c = new Consulta();
+			c.Datahora = Convert.ToDateTime(txtdatahora.Text);
+			c.Motivo = txtmotivo.Text;
+			c.Medicos = Convert.ToInt32(cbMedico.SelectedValue.ToString());
+			c.Clientes = Convert.ToInt32(cbPaciente.SelectedValue.ToString());
+
+			ConectaBanco conecta = new ConectaBanco();
+			bool retorno = conecta.insereConsulta(c);
+			if (retorno)
+			{
+				MessageBox.Show("Dados inseridos com sucesso!");
+
+			}
+			else
+			{
+				MessageBox.Show(conecta.mensagem+ "dados: "+c.Medicos + " "+c.Clientes);
+			}
 		}
 	}
 }
