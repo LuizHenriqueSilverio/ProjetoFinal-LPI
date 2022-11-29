@@ -19,3 +19,24 @@ C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMed
 C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\ref\AgendaMedica.dll
 C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.formPrincipal.resources
 C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.Properties.Resources.resources
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\AgendaMedica.exe
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\AgendaMedica.deps.json
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\AgendaMedica.runtimeconfig.json
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\AgendaMedica.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\AgendaMedica.pdb
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\bin\Debug\net6.0-windows\MySqlConnector.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.csproj.AssemblyReference.cache
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.formPrincipal.resources
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.Properties.Resources.resources
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.csproj.GenerateResource.cache
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.GeneratedMSBuildEditorConfig.editorconfig
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.AssemblyInfoInputs.cache
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.AssemblyInfo.cs
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.csproj.CoreCompileInputs.cache
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.csproj.CopyComplete
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\refint\AgendaMedica.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.pdb
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.genruntimeconfig.cache
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\ref\AgendaMedica.dll

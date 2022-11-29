@@ -61,11 +61,13 @@ namespace AgendaMedica
 		private void iconButton1_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, color);
+			painelPrincipal.SelectedTab = painelPrincipal.TabPages[0];
 		}
 
 		private void iconButton2_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, color);
+			painelPrincipal.SelectedTab = painelPrincipal.TabPages[1];
 		}
 
 		private void iconButton3_Click(object sender, EventArgs e)
@@ -82,6 +84,21 @@ namespace AgendaMedica
 		private void btn_Icone_Click(object sender, EventArgs e)
 		{
 			Reset();
+		}
+
+		private void tabAlterar_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void cbMedico_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnSair_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }
