@@ -32,11 +32,10 @@ CREATE TABLE IF NOT EXISTS `consultas` (
   CONSTRAINT `fk_CONSULTAS_PACIENTES1` FOREIGN KEY (`PACIENTES_codPACIENTES`) REFERENCES `pacientes` (`codPACIENTES`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.consultas: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.consultas: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
 INSERT INTO `consultas` (`codCONSULTA`, `dataHora`, `motivo`, `MEDICOS_codMEDICOS`, `PACIENTES_codPACIENTES`) VALUES
-	(21, '2022-11-25 07:30:00', 'Febre e dor de garganta', 1, 2),
-	(22, '0000-00-00 00:00:00', 'Dores intensas de barriga, febre.', 1, 2);
+	(21, '2022-11-25 07:30:00', 'Febre e dor de garganta', 1, 2);
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela psf_luizedaiana.medicos

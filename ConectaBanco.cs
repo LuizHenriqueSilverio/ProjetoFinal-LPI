@@ -102,5 +102,27 @@ namespace AgendaMedica
 				conexao.Close();
 			}// fim insere_consultas
 		}
+
+		public bool deletaConsulta(int codConsulta)
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_deletaConsulta", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("codcons", codConsulta);
+			try
+			{
+				conexao.Open();
+				cmd.ExecuteNonQuery(); // executa o comando
+				return true;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro:" + e.Message;
+				return false;
+			}
+			finally
+			{
+				conexao.Close();
+			}
+		}// fim deletaBanda
 	}
 }

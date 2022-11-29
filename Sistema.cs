@@ -153,7 +153,31 @@ namespace AgendaMedica
 			}
 			else
 			{
-				MessageBox.Show(conecta.mensagem+ "dados: "+c.Medicos + " "+c.Clientes);
+				MessageBox.Show(conecta.mensagem);
+			}
+		}
+
+		private void btnExcluir_Click(object sender, EventArgs e)
+		{
+			int linha = dgConsultas.CurrentRow.Index;
+			int idRemover = Convert.ToInt32(dgConsultas.Rows[linha].Cells["código"].Value.ToString());
+			DialogResult resp = MessageBox.Show("Confirma exclusão?", "Remove consulta", MessageBoxButtons.OKCancel);
+			if (resp == DialogResult.OK)
+			{
+				ConectaBanco conecta = new ConectaBanco();
+				bool retorno = conecta.deletaConsulta(idRemover);
+				if (retorno)
+				{
+					MessageBox.Show("Consulta excluída!");
+				}
+				else
+				{
+					MessageBox.Show(conecta.mensagem);
+				}
+			}
+			else
+			{
+				MessageBox.Show("Operação cancelada!");
 			}
 		}
 	}
