@@ -82,10 +82,10 @@ namespace AgendaMedica
 		{
 			MySqlCommand cmd = new MySqlCommand("proc_insereConsulta", conexao);
 			cmd.CommandType = CommandType.StoredProcedure;
-			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-mm-dd HH:mm:ss"));
+			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-MM-dd HH:mm:ss"));
 			cmd.Parameters.AddWithValue("motivo", c.Motivo);
 			cmd.Parameters.AddWithValue("medicos_codmedicos", c.Medicos);
-			cmd.Parameters.AddWithValue("paciente_codpacientes", c.Clientes);
+			cmd.Parameters.AddWithValue("paciente_codpacientes", c.Pacientes);
 			try
 			{
 				conexao.Open();
@@ -125,15 +125,15 @@ namespace AgendaMedica
 			}
 		}// fim deleta_consulta
 
-		public bool alteraConsulta(Consulta c)
+		public bool alteraConsulta(Consulta c, int codcons)
 		{
 			MySqlCommand cmd = new MySqlCommand("proc_alteraConsulta", conexao);
 			cmd.CommandType = CommandType.StoredProcedure;
-			cmd.Parameters.AddWithValue("codpaciente", codpaciente);
-			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-mm-dd HH:mm:ss"));
+			cmd.Parameters.AddWithValue("codcons", codcons);
+			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-MM-dd HH:mm:ss"));
 			cmd.Parameters.AddWithValue("motivo", c.Motivo);
+			cmd.Parameters.AddWithValue("pacientes_codpacientes", c.Pacientes);
 			cmd.Parameters.AddWithValue("medicos_codmedicos", c.Medicos);
-			cmd.Parameters.AddWithValue("paciente_codpacientes", c.Clientes);
 			try
 			{
 				conexao.Open();

@@ -28,9 +28,9 @@ namespace AgendaMedica
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.painelMenu = new System.Windows.Forms.Panel();
             this.btn_Listar = new FontAwesome.Sharp.IconButton();
             this.btn_Cadastrar = new FontAwesome.Sharp.IconButton();
@@ -41,6 +41,7 @@ namespace AgendaMedica
             this.Titulo = new System.Windows.Forms.Label();
             this.painelPrincipal = new System.Windows.Forms.TabControl();
             this.tabCadastrar = new System.Windows.Forms.TabPage();
+            this.txtdatahora = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmaCadastro = new FontAwesome.Sharp.IconButton();
             this.txtmotivo = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace AgendaMedica
             this.btnAddMedicos = new FontAwesome.Sharp.IconButton();
             this.cbMedico = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtdatahora = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabListar = new System.Windows.Forms.TabPage();
             this.btnAlterar = new FontAwesome.Sharp.IconButton();
@@ -59,6 +59,7 @@ namespace AgendaMedica
             this.label6 = new System.Windows.Forms.Label();
             this.dgConsultas = new System.Windows.Forms.DataGridView();
             this.tabAlterar = new System.Windows.Forms.TabPage();
+            this.txtalteradata = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmaAlteracao = new FontAwesome.Sharp.IconButton();
             this.txtalteramotivo = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@ namespace AgendaMedica
             this.label9 = new System.Windows.Forms.Label();
             this.cbAlteramedico = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtalteradata = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblmsgerro = new System.Windows.Forms.Label();
             this.painelMenu.SuspendLayout();
@@ -204,6 +204,7 @@ namespace AgendaMedica
             // tabCadastrar
             // 
             this.tabCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabCadastrar.Controls.Add(this.txtdatahora);
             this.tabCadastrar.Controls.Add(this.btnConfirmaCadastro);
             this.tabCadastrar.Controls.Add(this.txtmotivo);
             this.tabCadastrar.Controls.Add(this.label5);
@@ -213,7 +214,6 @@ namespace AgendaMedica
             this.tabCadastrar.Controls.Add(this.btnAddMedicos);
             this.tabCadastrar.Controls.Add(this.cbMedico);
             this.tabCadastrar.Controls.Add(this.label3);
-            this.tabCadastrar.Controls.Add(this.txtdatahora);
             this.tabCadastrar.Controls.Add(this.label2);
             this.tabCadastrar.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.tabCadastrar.Location = new System.Drawing.Point(4, 24);
@@ -222,6 +222,17 @@ namespace AgendaMedica
             this.tabCadastrar.Size = new System.Drawing.Size(745, 421);
             this.tabCadastrar.TabIndex = 0;
             this.tabCadastrar.Text = "Cadastrar";
+            // 
+            // txtdatahora
+            // 
+            this.txtdatahora.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.txtdatahora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtdatahora.Location = new System.Drawing.Point(177, 41);
+            this.txtdatahora.Name = "txtdatahora";
+            this.txtdatahora.Size = new System.Drawing.Size(426, 23);
+            this.txtdatahora.TabIndex = 12;
+            this.txtdatahora.Value = new System.DateTime(2022, 12, 1, 20, 3, 0, 0);
+            this.txtdatahora.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnConfirmaCadastro
             // 
@@ -323,13 +334,6 @@ namespace AgendaMedica
             this.label3.TabIndex = 3;
             this.label3.Text = "Médico:";
             // 
-            // txtdatahora
-            // 
-            this.txtdatahora.Location = new System.Drawing.Point(177, 41);
-            this.txtdatahora.Name = "txtdatahora";
-            this.txtdatahora.Size = new System.Drawing.Size(426, 23);
-            this.txtdatahora.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -413,31 +417,31 @@ namespace AgendaMedica
             // 
             // dgConsultas
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgConsultas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.Location = new System.Drawing.Point(6, 108);
             this.dgConsultas.Name = "dgConsultas";
             this.dgConsultas.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgConsultas.RowTemplate.Height = 25;
             this.dgConsultas.Size = new System.Drawing.Size(733, 245);
             this.dgConsultas.TabIndex = 0;
@@ -445,6 +449,7 @@ namespace AgendaMedica
             // tabAlterar
             // 
             this.tabAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabAlterar.Controls.Add(this.txtalteradata);
             this.tabAlterar.Controls.Add(this.btnConfirmaAlteracao);
             this.tabAlterar.Controls.Add(this.txtalteramotivo);
             this.tabAlterar.Controls.Add(this.label10);
@@ -452,7 +457,6 @@ namespace AgendaMedica
             this.tabAlterar.Controls.Add(this.label9);
             this.tabAlterar.Controls.Add(this.cbAlteramedico);
             this.tabAlterar.Controls.Add(this.label8);
-            this.tabAlterar.Controls.Add(this.txtalteradata);
             this.tabAlterar.Controls.Add(this.label7);
             this.tabAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.tabAlterar.Location = new System.Drawing.Point(4, 24);
@@ -461,6 +465,15 @@ namespace AgendaMedica
             this.tabAlterar.TabIndex = 2;
             this.tabAlterar.Text = "Alterar";
             this.tabAlterar.Click += new System.EventHandler(this.tabAlterar_Click);
+            // 
+            // txtalteradata
+            // 
+            this.txtalteradata.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.txtalteradata.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtalteradata.Location = new System.Drawing.Point(177, 41);
+            this.txtalteradata.Name = "txtalteradata";
+            this.txtalteradata.Size = new System.Drawing.Size(426, 23);
+            this.txtalteradata.TabIndex = 13;
             // 
             // btnConfirmaAlteracao
             // 
@@ -535,13 +548,6 @@ namespace AgendaMedica
             this.label8.TabIndex = 4;
             this.label8.Text = "Médico:";
             // 
-            // txtalteradata
-            // 
-            this.txtalteradata.Location = new System.Drawing.Point(177, 41);
-            this.txtalteradata.Name = "txtalteradata";
-            this.txtalteradata.Size = new System.Drawing.Size(426, 23);
-            this.txtalteradata.TabIndex = 3;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -613,7 +619,6 @@ namespace AgendaMedica
         private FontAwesome.Sharp.IconButton btnAddMedicos;
         private ComboBox cbMedico;
         private Label label3;
-        private TextBox txtdatahora;
         private Label label4;
         private RichTextBox txtmotivo;
         private Label label5;
@@ -632,7 +637,8 @@ namespace AgendaMedica
 		private Label label9;
 		private ComboBox cbAlteramedico;
 		private Label label8;
-		private TextBox txtalteradata;
 		private Label label7;
-	}
+        private DateTimePicker txtdatahora;
+        private DateTimePicker txtalteradata;
+    }
 }

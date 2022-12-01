@@ -15,6 +15,6 @@ namespace AgendaMedica
 		public DateTime Datahora { get => datahora; set => datahora = value; }
 		public string Motivo { get => motivo; set => motivo = value; }
 		public int Medicos { get => medicos; set => medicos = value; }
-		public int Clientes { get => clientes; set => clientes = value; }
+		public int Pacientes { get => clientes; set => clientes = value; }
 	}
 }

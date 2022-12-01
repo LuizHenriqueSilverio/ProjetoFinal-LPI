@@ -64,7 +64,10 @@ namespace AgendaMedica
 			cbMedico.DataSource = tabelaDados; // especifica a fonte de dados
 			cbMedico.DisplayMember = "nome"; // texto que será mostrado
 			cbMedico.ValueMember = "codMedicos"; // qual valor que será guardado quando selecionado
-			//lblmsgerro.Text = con.mensagem;
+			cbAlteramedico.DataSource = tabelaDados; // especifica a fonte de dados
+			cbAlteramedico.DisplayMember = "nome"; // texto que será mostrado
+			cbAlteramedico.ValueMember = "codMedicos"; // qual valor que será guardado quando selecionado
+												 //lblmsgerro.Text = con.mensagem;
 			cbMedico.Text = "";
 		}
 
@@ -76,7 +79,10 @@ namespace AgendaMedica
 			cbPaciente.DataSource = tabelaDados; // especifica a fonte de dados
 			cbPaciente.DisplayMember = "nome"; // texto que será mostrado
 			cbPaciente.ValueMember = "codPacientes"; // qual valor que será guardado quando selecionado
-			//lblmsgerro.Text = con.mensagem;
+			cbAlterapaciente.DataSource = tabelaDados; // especifica a fonte de dados
+			cbAlterapaciente.DisplayMember = "nome"; // texto que será mostrado
+			cbAlterapaciente.ValueMember = "codPacientes"; // qual valor que será guardado quando selecionado
+													 //lblmsgerro.Text = con.mensagem;
 			cbPaciente.Text = "";
 		}
 
@@ -87,11 +93,24 @@ namespace AgendaMedica
 			lblmsgerro.Text = con.mensagem;
 		}
 
+		private void limpaCampos()
+		{
+			txtdatahora.Text = "";
+			cbMedico.Text = "";
+			cbPaciente.Text = "";
+			txtmotivo.Text = "";
+			txtalteradata.Text = "";
+			cbAlteramedico.Text = "";
+			cbAlterapaciente.Text = "";
+			txtmotivo.Text = "";
+		}
+
 		private void formPrincipal_Load(object sender, EventArgs e)
 		{
 			listaMedico();
 			listaPaciente();
 			listaConsulta();
+			limpaCampos();
 		}
 
 		private void iconButton1_Click(object sender, EventArgs e)
@@ -140,10 +159,10 @@ namespace AgendaMedica
 		private void btnConfirmaCadastro_Click(object sender, EventArgs e)
 		{
 			Consulta c = new Consulta();
-			c.Datahora = Convert.ToDateTime(txtdatahora.Text);
+			c.Datahora = txtdatahora.Value;
 			c.Motivo = txtmotivo.Text;
 			c.Medicos = Convert.ToInt32(cbMedico.SelectedValue.ToString());
-			c.Clientes = Convert.ToInt32(cbPaciente.SelectedValue.ToString());
+			c.Pacientes = Convert.ToInt32(cbPaciente.SelectedValue.ToString());
 
 			ConectaBanco conecta = new ConectaBanco();
 			bool retorno = conecta.insereConsulta(c);
@@ -156,6 +175,9 @@ namespace AgendaMedica
 			{
 				MessageBox.Show(conecta.mensagem);
 			}
+			listaConsulta();
+			limpaCampos(); 
+			painelPrincipal.SelectedTab = tabListar;
 		}
 
 		private void btnExcluir_Click(object sender, EventArgs e)
@@ -180,6 +202,7 @@ namespace AgendaMedica
 			{
 				MessageBox.Show("Operação cancelada!");
 			}
+			listaConsulta();
 		}
 
 		private void btnAlterar_Click(object sender, EventArgs e)
@@ -187,8 +210,8 @@ namespace AgendaMedica
 			int linha = dgConsultas.CurrentRow.Index;
 			idalterar = Convert.ToInt32(dgConsultas.Rows[linha].Cells["código"].Value.ToString());
 			txtalteradata.Text = dgConsultas.Rows[linha].Cells["data e hora"].Value.ToString();
-			cbAlteramedico.Text = dgConsultas.Rows[linha].Cells["médico"].Value.ToString();
-			cbAlterapaciente.Text = dgConsultas.Rows[linha].Cells["paciente"].Value.ToString();
+			cbAlteramedico.Text = dgConsultas.Rows[linha].Cells["nome do médico"].Value.ToString();
+			cbAlterapaciente.Text = dgConsultas.Rows[linha].Cells["nome do paciente"].Value.ToString();
 			txtalteramotivo.Text = dgConsultas.Rows[linha].Cells["motivo"].Value.ToString();
 
 			painelPrincipal.SelectedTab = tabAlterar;
@@ -197,9 +220,29 @@ namespace AgendaMedica
 		private void btnConfirmaAlteracao_Click(object sender, EventArgs e)
 		{
 			Consulta c = new Consulta();
-			c.Datahora = Convert.ToDateTime(txtalteradata.Text);
+			c.Datahora = txtalteradata.Value;
 			c.Medicos = Convert.ToInt32(cbAlteramedico.SelectedValue.ToString());
+			c.Pacientes = Convert.ToInt32(cbAlterapaciente.SelectedValue.ToString());
+			c.Motivo = txtalteramotivo.Text;
+
+			ConectaBanco conecta = new ConectaBanco();
+			bool retorno = conecta.alteraConsulta(c, idalterar);
+			if (retorno)
+			{
+				MessageBox.Show("Dados alterados com sucesso!");
+			}
+			else
+			{
+				lblmsgerro.Text = conecta.mensagem;
+			}
+			listaConsulta();
+			limpaCampos();
+			painelPrincipal.SelectedTab = tabListar;
 		}
 
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
