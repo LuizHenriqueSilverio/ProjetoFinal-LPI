@@ -28,9 +28,9 @@ namespace AgendaMedica
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.painelMenu = new System.Windows.Forms.Panel();
             this.btn_Listar = new FontAwesome.Sharp.IconButton();
             this.btn_Cadastrar = new FontAwesome.Sharp.IconButton();
@@ -59,6 +59,15 @@ namespace AgendaMedica
             this.label6 = new System.Windows.Forms.Label();
             this.dgConsultas = new System.Windows.Forms.DataGridView();
             this.tabAlterar = new System.Windows.Forms.TabPage();
+            this.btnConfirmaAlteracao = new FontAwesome.Sharp.IconButton();
+            this.txtalteramotivo = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbAlterapaciente = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbAlteramedico = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtalteradata = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblmsgerro = new System.Windows.Forms.Label();
             this.painelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +77,7 @@ namespace AgendaMedica
             this.tabCadastrar.SuspendLayout();
             this.tabListar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsultas)).BeginInit();
+            this.tabAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
             // painelMenu
@@ -276,7 +286,7 @@ namespace AgendaMedica
             // cbPaciente
             // 
             this.cbPaciente.FormattingEnabled = true;
-            this.cbPaciente.Location = new System.Drawing.Point(177, 139);
+            this.cbPaciente.Location = new System.Drawing.Point(177, 140);
             this.cbPaciente.Name = "cbPaciente";
             this.cbPaciente.Size = new System.Drawing.Size(426, 23);
             this.cbPaciente.TabIndex = 6;
@@ -363,6 +373,7 @@ namespace AgendaMedica
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -402,31 +413,31 @@ namespace AgendaMedica
             // 
             // dgConsultas
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgConsultas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.Location = new System.Drawing.Point(6, 108);
             this.dgConsultas.Name = "dgConsultas";
             this.dgConsultas.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgConsultas.RowTemplate.Height = 25;
             this.dgConsultas.Size = new System.Drawing.Size(733, 245);
             this.dgConsultas.TabIndex = 0;
@@ -434,6 +445,15 @@ namespace AgendaMedica
             // tabAlterar
             // 
             this.tabAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabAlterar.Controls.Add(this.btnConfirmaAlteracao);
+            this.tabAlterar.Controls.Add(this.txtalteramotivo);
+            this.tabAlterar.Controls.Add(this.label10);
+            this.tabAlterar.Controls.Add(this.cbAlterapaciente);
+            this.tabAlterar.Controls.Add(this.label9);
+            this.tabAlterar.Controls.Add(this.cbAlteramedico);
+            this.tabAlterar.Controls.Add(this.label8);
+            this.tabAlterar.Controls.Add(this.txtalteradata);
+            this.tabAlterar.Controls.Add(this.label7);
             this.tabAlterar.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.tabAlterar.Location = new System.Drawing.Point(4, 24);
             this.tabAlterar.Name = "tabAlterar";
@@ -441,6 +461,96 @@ namespace AgendaMedica
             this.tabAlterar.TabIndex = 2;
             this.tabAlterar.Text = "Alterar";
             this.tabAlterar.Click += new System.EventHandler(this.tabAlterar_Click);
+            // 
+            // btnConfirmaAlteracao
+            // 
+            this.btnConfirmaAlteracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmaAlteracao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmaAlteracao.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnConfirmaAlteracao.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.btnConfirmaAlteracao.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnConfirmaAlteracao.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConfirmaAlteracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmaAlteracao.Location = new System.Drawing.Point(293, 331);
+            this.btnConfirmaAlteracao.Name = "btnConfirmaAlteracao";
+            this.btnConfirmaAlteracao.Size = new System.Drawing.Size(153, 56);
+            this.btnConfirmaAlteracao.TabIndex = 12;
+            this.btnConfirmaAlteracao.Text = "Alterar";
+            this.btnConfirmaAlteracao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmaAlteracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfirmaAlteracao.UseVisualStyleBackColor = true;
+            this.btnConfirmaAlteracao.Click += new System.EventHandler(this.btnConfirmaAlteracao_Click);
+            // 
+            // txtalteramotivo
+            // 
+            this.txtalteramotivo.Location = new System.Drawing.Point(177, 182);
+            this.txtalteramotivo.Name = "txtalteramotivo";
+            this.txtalteramotivo.Size = new System.Drawing.Size(493, 82);
+            this.txtalteramotivo.TabIndex = 11;
+            this.txtalteramotivo.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(57, 214);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 19);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Motivo:";
+            // 
+            // cbAlterapaciente
+            // 
+            this.cbAlterapaciente.FormattingEnabled = true;
+            this.cbAlterapaciente.Location = new System.Drawing.Point(177, 140);
+            this.cbAlterapaciente.Name = "cbAlterapaciente";
+            this.cbAlterapaciente.Size = new System.Drawing.Size(426, 23);
+            this.cbAlterapaciente.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(57, 140);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 19);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Paciente:";
+            // 
+            // cbAlteramedico
+            // 
+            this.cbAlteramedico.FormattingEnabled = true;
+            this.cbAlteramedico.Location = new System.Drawing.Point(177, 89);
+            this.cbAlteramedico.Name = "cbAlteramedico";
+            this.cbAlteramedico.Size = new System.Drawing.Size(426, 23);
+            this.cbAlteramedico.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(57, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 19);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Médico:";
+            // 
+            // txtalteradata
+            // 
+            this.txtalteradata.Location = new System.Drawing.Point(177, 41);
+            this.txtalteradata.Name = "txtalteradata";
+            this.txtalteradata.Size = new System.Drawing.Size(426, 23);
+            this.txtalteradata.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(57, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 19);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Data e Hora:";
             // 
             // lblmsgerro
             // 
@@ -477,6 +587,8 @@ namespace AgendaMedica
             this.tabListar.ResumeLayout(false);
             this.tabListar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsultas)).EndInit();
+            this.tabAlterar.ResumeLayout(false);
+            this.tabAlterar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +625,14 @@ namespace AgendaMedica
         private Label label6;
         private DataGridView dgConsultas;
 		private Label lblmsgerro;
+		private FontAwesome.Sharp.IconButton btnConfirmaAlteracao;
+		private RichTextBox txtalteramotivo;
+		private Label label10;
+		private ComboBox cbAlterapaciente;
+		private Label label9;
+		private ComboBox cbAlteramedico;
+		private Label label8;
+		private TextBox txtalteradata;
+		private Label label7;
 	}
 }

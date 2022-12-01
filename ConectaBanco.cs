@@ -123,6 +123,33 @@ namespace AgendaMedica
 			{
 				conexao.Close();
 			}
-		}// fim deletaBanda
+		}// fim deleta_consulta
+
+		public bool alteraConsulta(Consulta c)
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_alteraConsulta", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("codpaciente", codpaciente);
+			cmd.Parameters.AddWithValue("datahora", c.Datahora.ToString("yyyy-mm-dd HH:mm:ss"));
+			cmd.Parameters.AddWithValue("motivo", c.Motivo);
+			cmd.Parameters.AddWithValue("medicos_codmedicos", c.Medicos);
+			cmd.Parameters.AddWithValue("paciente_codpacientes", c.Clientes);
+			try
+			{
+				conexao.Open();
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro: " + e.Message;
+				return false;
+			}
+			finally
+			{
+				conexao.Close();
+			}// fim altera_consulta
+		}
+
 	}
 }

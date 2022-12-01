@@ -11,6 +11,7 @@ namespace AgendaMedica
 
 		private IconButton currentBtn;
 		private Panel leftBorderBtn;
+		public int idalterar;
 
 		public formPrincipal()
 		{
@@ -180,5 +181,25 @@ namespace AgendaMedica
 				MessageBox.Show("Operação cancelada!");
 			}
 		}
+
+		private void btnAlterar_Click(object sender, EventArgs e)
+		{
+			int linha = dgConsultas.CurrentRow.Index;
+			idalterar = Convert.ToInt32(dgConsultas.Rows[linha].Cells["código"].Value.ToString());
+			txtalteradata.Text = dgConsultas.Rows[linha].Cells["data e hora"].Value.ToString();
+			cbAlteramedico.Text = dgConsultas.Rows[linha].Cells["médico"].Value.ToString();
+			cbAlterapaciente.Text = dgConsultas.Rows[linha].Cells["paciente"].Value.ToString();
+			txtalteramotivo.Text = dgConsultas.Rows[linha].Cells["motivo"].Value.ToString();
+
+			painelPrincipal.SelectedTab = tabAlterar;
+		}
+
+		private void btnConfirmaAlteracao_Click(object sender, EventArgs e)
+		{
+			Consulta c = new Consulta();
+			c.Datahora = Convert.ToDateTime(txtalteradata.Text);
+			c.Medicos = Convert.ToInt32(cbAlteramedico.SelectedValue.ToString());
+		}
+
 	}
 }
