@@ -38,8 +38,10 @@ namespace AgendaMedica
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Icone = new FontAwesome.Sharp.IconPictureBox();
             this.painelTitulo = new System.Windows.Forms.Panel();
+            this.btnFechar = new FontAwesome.Sharp.IconButton();
             this.Titulo = new System.Windows.Forms.Label();
             this.painelPrincipal = new System.Windows.Forms.TabControl();
+            this.tabHome = new System.Windows.Forms.TabPage();
             this.tabCadastrar = new System.Windows.Forms.TabPage();
             this.txtdatahora = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmaCadastro = new FontAwesome.Sharp.IconButton();
@@ -172,12 +174,28 @@ namespace AgendaMedica
             // painelTitulo
             // 
             this.painelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.painelTitulo.Controls.Add(this.btnFechar);
             this.painelTitulo.Controls.Add(this.Titulo);
             this.painelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.painelTitulo.Location = new System.Drawing.Point(220, 0);
             this.painelTitulo.Name = "painelTitulo";
             this.painelTitulo.Size = new System.Drawing.Size(753, 75);
             this.painelTitulo.TabIndex = 1;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnFechar.IconChar = FontAwesome.Sharp.IconChar.XmarkSquare;
+            this.btnFechar.IconColor = System.Drawing.Color.White;
+            this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFechar.Location = new System.Drawing.Point(702, 9);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(39, 37);
+            this.btnFechar.TabIndex = 1;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // Titulo
             // 
@@ -192,6 +210,7 @@ namespace AgendaMedica
             // 
             // painelPrincipal
             // 
+            this.painelPrincipal.Controls.Add(this.tabHome);
             this.painelPrincipal.Controls.Add(this.tabCadastrar);
             this.painelPrincipal.Controls.Add(this.tabListar);
             this.painelPrincipal.Controls.Add(this.tabAlterar);
@@ -200,6 +219,18 @@ namespace AgendaMedica
             this.painelPrincipal.SelectedIndex = 0;
             this.painelPrincipal.Size = new System.Drawing.Size(753, 449);
             this.painelPrincipal.TabIndex = 2;
+            // 
+            // tabHome
+            // 
+            this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabHome.BackgroundImage = global::AgendaMedica.Properties.Resources.kisspng_pharmacy_health_care_computer_icons_medicine_medical_snake_5b3054836b1fb4_0388120215298940194388;
+            this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabHome.Location = new System.Drawing.Point(4, 24);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHome.Size = new System.Drawing.Size(745, 421);
+            this.tabHome.TabIndex = 3;
+            this.tabHome.Text = "Home";
             // 
             // tabCadastrar
             // 
@@ -283,6 +314,7 @@ namespace AgendaMedica
             this.btnAddPaciente.Size = new System.Drawing.Size(39, 35);
             this.btnAddPaciente.TabIndex = 8;
             this.btnAddPaciente.UseVisualStyleBackColor = true;
+            this.btnAddPaciente.Click += new System.EventHandler(this.btnAddPaciente_Click);
             // 
             // label4
             // 
@@ -314,6 +346,7 @@ namespace AgendaMedica
             this.btnAddMedicos.Size = new System.Drawing.Size(39, 35);
             this.btnAddMedicos.TabIndex = 5;
             this.btnAddMedicos.UseVisualStyleBackColor = true;
+            this.btnAddMedicos.Click += new System.EventHandler(this.btnAddMedicos_Click);
             // 
             // cbMedico
             // 
@@ -578,7 +611,9 @@ namespace AgendaMedica
             this.Controls.Add(this.painelPrincipal);
             this.Controls.Add(this.painelTitulo);
             this.Controls.Add(this.painelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda Médica";
             this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.painelMenu.ResumeLayout(false);
@@ -640,5 +675,7 @@ namespace AgendaMedica
 		private Label label7;
         private DateTimePicker txtdatahora;
         private DateTimePicker txtalteradata;
+        private TabPage tabHome;
+        private FontAwesome.Sharp.IconButton btnFechar;
     }
 }

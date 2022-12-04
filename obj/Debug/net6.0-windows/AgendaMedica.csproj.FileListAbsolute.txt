@@ -40,3 +40,5 @@ E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-wind
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.pdb
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.genruntimeconfig.cache
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\ref\AgendaMedica.dll
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddMedico.resources
+E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddPaciente.resources

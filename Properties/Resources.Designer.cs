@@ -59,5 +59,16 @@ namespace AgendaMedica.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_pharmacy_health_care_computer_icons_medicine_medical_snake_5b3054836b1fb4_0388120215298940194388 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-pharmacy-health-care-computer-icons-medicine-medical-snake-5b3054836b1fb4" +
+                        ".0388120215298940194388", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

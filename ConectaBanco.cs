@@ -32,6 +32,30 @@ namespace AgendaMedica
 			}
 		}// fim lista_medicos
 
+		public bool insereMedico(Medico m)
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_insereMedico", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("nomemed", m.Nome);
+			cmd.Parameters.AddWithValue("crmmed", m.Crm);
+			cmd.Parameters.AddWithValue("espmed", m.Especialidade);
+			try
+			{
+				conexao.Open();
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro: " + e.Message;
+				return false;
+			}
+			finally
+			{
+				conexao.Close();
+			}
+		}
+
 		public DataTable listaPacientes()
 		{
 			MySqlCommand cmd = new MySqlCommand("proc_listaPacientes", conexao);
@@ -54,6 +78,31 @@ namespace AgendaMedica
 				conexao.Close();
 			}
 		}// fim lista_pacientes
+
+		public bool inserePaciente(Paciente p)
+		{
+			MySqlCommand cmd = new MySqlCommand("proc_inserePaciente", conexao);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("cpfpaciente", p.Cpf);
+			cmd.Parameters.AddWithValue("nomepaciente", p.Nome);
+			cmd.Parameters.AddWithValue("telefone", p.Telefone);
+			cmd.Parameters.AddWithValue("endereco", p.Endereco);
+			try
+			{
+				conexao.Open();
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (MySqlException e)
+			{
+				mensagem = "Erro: " + e.Message;
+				return false;
+			}
+			finally
+			{
+				conexao.Close();
+			}
+		}
 
 		public DataTable listaConsultas()
 		{
@@ -150,6 +199,7 @@ namespace AgendaMedica
 				conexao.Close();
 			}// fim altera_consulta
 		}
+
 
 	}
 }

@@ -116,13 +116,13 @@ namespace AgendaMedica
 		private void iconButton1_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, color);
-			painelPrincipal.SelectedTab = painelPrincipal.TabPages[0];
+			painelPrincipal.SelectedTab = tabCadastrar;
 		}
 
 		private void iconButton2_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, color);
-			painelPrincipal.SelectedTab = painelPrincipal.TabPages[1];
+			painelPrincipal.SelectedTab = tabListar;
 		}
 
 		private void iconButton3_Click(object sender, EventArgs e)
@@ -139,6 +139,7 @@ namespace AgendaMedica
 		private void btn_Icone_Click(object sender, EventArgs e)
 		{
 			Reset();
+			painelPrincipal.SelectedTab = tabHome;
 		}
 
 		private void tabAlterar_Click(object sender, EventArgs e)
@@ -243,6 +244,27 @@ namespace AgendaMedica
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void btnAddMedicos_Click(object sender, EventArgs e)
+		{
+			FrmAddMedico frmAddMedico = new FrmAddMedico();
+			this.Hide();
+			frmAddMedico.ShowDialog();
+			this.Close();
+		}
+
+		private void btnFechar_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnAddPaciente_Click(object sender, EventArgs e)
+		{
+			FrmAddPaciente frmAddPaciente = new FrmAddPaciente();
+			this.Hide();
+			frmAddPaciente.ShowDialog();
+			this.Close();
 		}
 	}
 }
