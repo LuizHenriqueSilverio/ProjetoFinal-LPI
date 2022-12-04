@@ -111,6 +111,9 @@ namespace AgendaMedica
 			listaPaciente();
 			listaConsulta();
 			limpaCampos();
+			this.painelPrincipal.Appearance = TabAppearance.FlatButtons;
+			this.painelPrincipal.ItemSize = new System.Drawing.Size(0, 1);
+			this.painelPrincipal.SizeMode = TabSizeMode.Fixed;
 		}
 
 		private void iconButton1_Click(object sender, EventArgs e)
@@ -178,7 +181,6 @@ namespace AgendaMedica
 			}
 			listaConsulta();
 			limpaCampos(); 
-			painelPrincipal.SelectedTab = tabListar;
 		}
 
 		private void btnExcluir_Click(object sender, EventArgs e)
