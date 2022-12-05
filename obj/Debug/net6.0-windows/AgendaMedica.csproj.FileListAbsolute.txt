@@ -43,3 +43,6 @@ E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-wind
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddMedico.resources
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddPaciente.resources
 E:\Downloads\REPOSITORIOS DO IFSULDEMINAS\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmLogin.resources
+C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddMedico.resources
+C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmAddPaciente.resources
+C:\Users\02239263610\Desktop\ProjetoFinal-LPI\obj\Debug\net6.0-windows\AgendaMedica.FrmLogin.resources

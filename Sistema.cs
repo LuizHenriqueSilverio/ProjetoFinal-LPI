@@ -268,5 +268,10 @@ namespace AgendaMedica
 			frmAddPaciente.ShowDialog();
 			this.Close();
 		}
+
+		private void txtBuscar_TextChanged(object sender, EventArgs e)
+		{
+			(dgConsultas.DataSource as DataTable).DefaultView.RowFilter = String.Format("`Nome do Paciente` LIKE '" + txtBuscar.Text + "%'");
+		}
 	}
 }
