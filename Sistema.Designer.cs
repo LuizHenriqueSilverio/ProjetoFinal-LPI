@@ -28,9 +28,9 @@ namespace AgendaMedica
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.painelMenu = new System.Windows.Forms.Panel();
             this.btn_Listar = new FontAwesome.Sharp.IconButton();
             this.btn_Cadastrar = new FontAwesome.Sharp.IconButton();
@@ -55,9 +55,11 @@ namespace AgendaMedica
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabListar = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBuscaMedico = new System.Windows.Forms.TextBox();
             this.btnAlterar = new FontAwesome.Sharp.IconButton();
             this.btnExcluir = new FontAwesome.Sharp.IconButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgConsultas = new System.Windows.Forms.DataGridView();
             this.tabAlterar = new System.Windows.Forms.TabPage();
@@ -380,9 +382,11 @@ namespace AgendaMedica
             // tabListar
             // 
             this.tabListar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabListar.Controls.Add(this.label11);
+            this.tabListar.Controls.Add(this.txtBuscaMedico);
             this.tabListar.Controls.Add(this.btnAlterar);
             this.tabListar.Controls.Add(this.btnExcluir);
-            this.tabListar.Controls.Add(this.txtBuscar);
+            this.tabListar.Controls.Add(this.txtBuscarCliente);
             this.tabListar.Controls.Add(this.label6);
             this.tabListar.Controls.Add(this.dgConsultas);
             this.tabListar.ForeColor = System.Drawing.Color.BlanchedAlmond;
@@ -392,6 +396,24 @@ namespace AgendaMedica
             this.tabListar.Size = new System.Drawing.Size(745, 421);
             this.tabListar.TabIndex = 1;
             this.tabListar.Text = "Listar";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(34, 56);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 19);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Médico:";
+            // 
+            // txtBuscaMedico
+            // 
+            this.txtBuscaMedico.Location = new System.Drawing.Point(92, 56);
+            this.txtBuscaMedico.Name = "txtBuscaMedico";
+            this.txtBuscaMedico.Size = new System.Drawing.Size(292, 23);
+            this.txtBuscaMedico.TabIndex = 6;
+            this.txtBuscaMedico.TextChanged += new System.EventHandler(this.txtBuscaMedico_TextChanged);
             // 
             // btnAlterar
             // 
@@ -431,51 +453,51 @@ namespace AgendaMedica
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // txtBuscar
+            // txtBuscarCliente
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(92, 35);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(292, 23);
-            this.txtBuscar.TabIndex = 3;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(92, 17);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(292, 23);
+            this.txtBuscarCliente.TabIndex = 3;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(34, 36);
+            this.label6.Location = new System.Drawing.Point(34, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.Size = new System.Drawing.Size(54, 19);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Buscar:";
+            this.label6.Text = "Cliente:";
             // 
             // dgConsultas
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgConsultas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.Location = new System.Drawing.Point(6, 108);
             this.dgConsultas.Name = "dgConsultas";
             this.dgConsultas.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgConsultas.RowTemplate.Height = 25;
             this.dgConsultas.Size = new System.Drawing.Size(733, 245);
             this.dgConsultas.TabIndex = 0;
@@ -662,7 +684,7 @@ namespace AgendaMedica
         private FontAwesome.Sharp.IconButton btnConfirmaCadastro;
         private FontAwesome.Sharp.IconButton btnAlterar;
         private FontAwesome.Sharp.IconButton btnExcluir;
-        private TextBox txtBuscar;
+        private TextBox txtBuscarCliente;
         private Label label6;
         private DataGridView dgConsultas;
 		private Label lblmsgerro;
@@ -678,5 +700,7 @@ namespace AgendaMedica
         private DateTimePicker txtalteradata;
         private TabPage tabHome;
         private FontAwesome.Sharp.IconButton btnFechar;
+        private Label label11;
+        private TextBox txtBuscaMedico;
     }
 }

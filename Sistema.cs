@@ -269,9 +269,14 @@ namespace AgendaMedica
 			this.Close();
 		}
 
-		private void txtBuscar_TextChanged(object sender, EventArgs e)
+		private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
 		{
-			(dgConsultas.DataSource as DataTable).DefaultView.RowFilter = String.Format("`Nome do Paciente` LIKE '" + txtBuscar.Text + "%'");
+			(dgConsultas.DataSource as DataTable).DefaultView.RowFilter = String.Format("`Nome do Paciente` LIKE '" + txtBuscarCliente.Text + "%'");
+		}
+
+		private void txtBuscaMedico_TextChanged(object sender, EventArgs e)
+		{
+			(dgConsultas.DataSource as DataTable).DefaultView.RowFilter = String.Format("`Nome do Médico` LIKE '" + txtBuscaMedico.Text + "%'");
 		}
 	}
 }
