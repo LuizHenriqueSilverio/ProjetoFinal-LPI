@@ -24,7 +24,8 @@ namespace AgendaMedica
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			if(txtuserlogin.Text == "adm" && txtsenhalogin.Text == "123")
+			ConectaBanco conecta = new ConectaBanco();
+			if(conecta.verificaLogin(txtuserlogin.Text, txtsenhalogin.Text) == true)
 			{
 				formPrincipal sistema = new formPrincipal();
 				this.Hide();

@@ -102,7 +102,9 @@ namespace AgendaMedica
 			txtalteradata.Text = "";
 			cbAlteramedico.Text = "";
 			cbAlterapaciente.Text = "";
-			txtmotivo.Text = "";
+			txtalteramotivo.Text = "";
+			txtnovouser.Text = "";
+			txtnovasenha.Text = "";
 		}
 
 		private void formPrincipal_Load(object sender, EventArgs e)
@@ -277,6 +279,27 @@ namespace AgendaMedica
 		private void txtBuscaMedico_TextChanged(object sender, EventArgs e)
 		{
 			(dgConsultas.DataSource as DataTable).DefaultView.RowFilter = String.Format("`Nome do Médico` LIKE '" + txtBuscaMedico.Text + "%'");
+		}
+
+		private void btnConfig_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, color);
+			painelPrincipal.SelectedTab = tabConfig;
+		}
+
+		private void btnCadastrarUser_Click(object sender, EventArgs e)
+		{
+			ConectaBanco conecta = new ConectaBanco();
+			bool retorno = conecta.cadastraLogin(txtnovouser.Text, txtnovasenha.Text);
+			if (retorno)
+			{
+				MessageBox.Show("Novo usuário cadastrado com sucesso!");
+			}
+			else
+			{
+				MessageBox.Show(conecta.mensagem);
+			}
+			limpaCampos();
 		}
 	}
 }

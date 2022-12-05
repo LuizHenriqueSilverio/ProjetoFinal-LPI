@@ -28,10 +28,11 @@ namespace AgendaMedica
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.painelMenu = new System.Windows.Forms.Panel();
+            this.btnConfig = new FontAwesome.Sharp.IconButton();
             this.btn_Listar = new FontAwesome.Sharp.IconButton();
             this.btn_Cadastrar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,6 +73,13 @@ namespace AgendaMedica
             this.cbAlteramedico = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabConfig = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnCadastrarUser = new FontAwesome.Sharp.IconButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtnovasenha = new System.Windows.Forms.TextBox();
+            this.txtnovouser = new System.Windows.Forms.TextBox();
             this.lblmsgerro = new System.Windows.Forms.Label();
             this.painelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,11 +90,13 @@ namespace AgendaMedica
             this.tabListar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConsultas)).BeginInit();
             this.tabAlterar.SuspendLayout();
+            this.tabConfig.SuspendLayout();
             this.SuspendLayout();
             // 
             // painelMenu
             // 
             this.painelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(58)))));
+            this.painelMenu.Controls.Add(this.btnConfig);
             this.painelMenu.Controls.Add(this.btn_Listar);
             this.painelMenu.Controls.Add(this.btn_Cadastrar);
             this.painelMenu.Controls.Add(this.panel2);
@@ -95,6 +105,26 @@ namespace AgendaMedica
             this.painelMenu.Name = "painelMenu";
             this.painelMenu.Size = new System.Drawing.Size(220, 592);
             this.painelMenu.TabIndex = 0;
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnConfig.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+            this.btnConfig.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnConfig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfig.Location = new System.Drawing.Point(0, 532);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(220, 60);
+            this.btnConfig.TabIndex = 3;
+            this.btnConfig.Text = "Configuração";
+            this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btn_Listar
             // 
@@ -216,7 +246,8 @@ namespace AgendaMedica
             this.painelPrincipal.Controls.Add(this.tabCadastrar);
             this.painelPrincipal.Controls.Add(this.tabListar);
             this.painelPrincipal.Controls.Add(this.tabAlterar);
-            this.painelPrincipal.Location = new System.Drawing.Point(220, 140);
+            this.painelPrincipal.Controls.Add(this.tabConfig);
+            this.painelPrincipal.Location = new System.Drawing.Point(220, 143);
             this.painelPrincipal.Name = "painelPrincipal";
             this.painelPrincipal.SelectedIndex = 0;
             this.painelPrincipal.Size = new System.Drawing.Size(753, 449);
@@ -473,31 +504,31 @@ namespace AgendaMedica
             // 
             // dgConsultas
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.dgConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgConsultas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgConsultas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.dgConsultas.Location = new System.Drawing.Point(6, 108);
             this.dgConsultas.Name = "dgConsultas";
             this.dgConsultas.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgConsultas.RowTemplate.Height = 25;
             this.dgConsultas.Size = new System.Drawing.Size(733, 245);
             this.dgConsultas.TabIndex = 0;
@@ -614,6 +645,87 @@ namespace AgendaMedica
             this.label7.TabIndex = 2;
             this.label7.Text = "Data e Hora:";
             // 
+            // tabConfig
+            // 
+            this.tabConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.tabConfig.Controls.Add(this.label14);
+            this.tabConfig.Controls.Add(this.label13);
+            this.tabConfig.Controls.Add(this.btnCadastrarUser);
+            this.tabConfig.Controls.Add(this.label12);
+            this.tabConfig.Controls.Add(this.txtnovasenha);
+            this.tabConfig.Controls.Add(this.txtnovouser);
+            this.tabConfig.Location = new System.Drawing.Point(4, 24);
+            this.tabConfig.Name = "tabConfig";
+            this.tabConfig.Size = new System.Drawing.Size(745, 421);
+            this.tabConfig.TabIndex = 4;
+            this.tabConfig.Text = "Config";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label14.Location = new System.Drawing.Point(85, 149);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 21);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Senha:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label13.Location = new System.Drawing.Point(85, 72);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 21);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Nome de Usuário:";
+            // 
+            // btnCadastrarUser
+            // 
+            this.btnCadastrarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrarUser.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnCadastrarUser.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnCadastrarUser.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnCadastrarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCadastrarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarUser.Location = new System.Drawing.Point(284, 314);
+            this.btnCadastrarUser.Name = "btnCadastrarUser";
+            this.btnCadastrarUser.Size = new System.Drawing.Size(153, 56);
+            this.btnCadastrarUser.TabIndex = 12;
+            this.btnCadastrarUser.Text = "Cadastrar";
+            this.btnCadastrarUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCadastrarUser.UseVisualStyleBackColor = true;
+            this.btnCadastrarUser.Click += new System.EventHandler(this.btnCadastrarUser_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.label12.Location = new System.Drawing.Point(257, 8);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(220, 25);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Cadastrar novo usuário";
+            // 
+            // txtnovasenha
+            // 
+            this.txtnovasenha.Location = new System.Drawing.Point(224, 147);
+            this.txtnovasenha.Name = "txtnovasenha";
+            this.txtnovasenha.Size = new System.Drawing.Size(292, 23);
+            this.txtnovasenha.TabIndex = 5;
+            // 
+            // txtnovouser
+            // 
+            this.txtnovouser.Location = new System.Drawing.Point(224, 70);
+            this.txtnovouser.Name = "txtnovouser";
+            this.txtnovouser.Size = new System.Drawing.Size(295, 23);
+            this.txtnovouser.TabIndex = 4;
+            // 
             // lblmsgerro
             // 
             this.lblmsgerro.AutoSize = true;
@@ -653,6 +765,8 @@ namespace AgendaMedica
             ((System.ComponentModel.ISupportInitialize)(this.dgConsultas)).EndInit();
             this.tabAlterar.ResumeLayout(false);
             this.tabAlterar.PerformLayout();
+            this.tabConfig.ResumeLayout(false);
+            this.tabConfig.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,5 +816,13 @@ namespace AgendaMedica
         private FontAwesome.Sharp.IconButton btnFechar;
         private Label label11;
         private TextBox txtBuscaMedico;
+        private FontAwesome.Sharp.IconButton btnConfig;
+        private TabPage tabConfig;
+        private Label label14;
+        private Label label13;
+        private FontAwesome.Sharp.IconButton btnCadastrarUser;
+        private Label label12;
+        private TextBox txtnovasenha;
+        private TextBox txtnovouser;
     }
 }

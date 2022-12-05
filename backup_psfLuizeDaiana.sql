@@ -33,9 +33,12 @@ CREATE TABLE IF NOT EXISTS `consultas` (
   KEY `fk_CONSULTAS_PACIENTES1_idx` (`PACIENTES_codPACIENTES`),
   CONSTRAINT `fk_CONSULTAS_MEDICOS` FOREIGN KEY (`MEDICOS_codMEDICOS`) REFERENCES `medicos` (`codMEDICOS`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_CONSULTAS_PACIENTES1` FOREIGN KEY (`PACIENTES_codPACIENTES`) REFERENCES `pacientes` (`codPACIENTES`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.consultas: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.consultas: ~2 rows (aproximadamente)
+INSERT INTO `consultas` (`codCONSULTA`, `dataHora`, `motivo`, `MEDICOS_codMEDICOS`, `PACIENTES_codPACIENTES`) VALUES
+	(27, '2022-12-01 15:30:09', 'Paciente reclama de dor de dente constante. Possível cárie.', 3, 3),
+	(28, '2022-12-05 17:00:00', 'Paciente sente dor constante nas pernas.', 2, 4);
 
 -- Copiando estrutura para tabela psf_luizedaiana.medicos
 DROP TABLE IF EXISTS `medicos`;
@@ -45,9 +48,12 @@ CREATE TABLE IF NOT EXISTS `medicos` (
   `crm` varchar(45) NOT NULL,
   `especialidade` varchar(200) NOT NULL,
   PRIMARY KEY (`codMEDICOS`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.medicos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.medicos: ~2 rows (aproximadamente)
+INSERT INTO `medicos` (`codMEDICOS`, `nome`, `crm`, `especialidade`) VALUES
+	(2, 'Daiana Mendes', '45893', 'Clínico Geral'),
+	(3, 'Luiz Henrique Silvério', '17920', 'Dentista');
 
 -- Copiando estrutura para tabela psf_luizedaiana.pacientes
 DROP TABLE IF EXISTS `pacientes`;
@@ -58,9 +64,12 @@ CREATE TABLE IF NOT EXISTS `pacientes` (
   `telefone` varchar(45) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   PRIMARY KEY (`codPACIENTES`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela psf_luizedaiana.pacientes: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela psf_luizedaiana.pacientes: ~1 rows (aproximadamente)
+INSERT INTO `pacientes` (`codPACIENTES`, `cpf`, `nome`, `telefone`, `endereco`) VALUES
+	(3, '123,456,789-10', 'José da Silva', '35 99999-9999', 'Rua das Acácias, Nº 180, Centro'),
+	(4, '400,289,227-89', 'Gabriel Caproni Pegoraro', '(35) 4002-8922', 'Rua Maria, nº76, Centro, Carvalhópolis-MG');
 
 -- Copiando estrutura para procedure psf_luizedaiana.proc_alteraConsulta
 DROP PROCEDURE IF EXISTS `proc_alteraConsulta`;
@@ -125,6 +134,17 @@ BEGIN
 END//
 DELIMITER ;
 
+-- Copiando estrutura para procedure psf_luizedaiana.proc_consultaLogin
+DROP PROCEDURE IF EXISTS `proc_consultaLogin`;
+DELIMITER //
+CREATE PROCEDURE `proc_consultaLogin`(IN usuario VARCHAR(100), IN senha VARCHAR(100))
+BEGIN
+	SELECT * FROM USUARIOS 
+    WHERE USUARIOS.nome = usuario
+    AND USUARIOS.senha = senha;
+END//
+DELIMITER ;
+
 -- Copiando estrutura para procedure psf_luizedaiana.proc_deletaConsulta
 DROP PROCEDURE IF EXISTS `proc_deletaConsulta`;
 DELIMITER //
@@ -184,6 +204,24 @@ BEGIN
 	);
 
 
+END//
+DELIMITER ;
+
+-- Copiando estrutura para procedure psf_luizedaiana.proc_insereLogin
+DROP PROCEDURE IF EXISTS `proc_insereLogin`;
+DELIMITER //
+CREATE PROCEDURE `proc_insereLogin`(IN usuario VARCHAR(100), IN senha VARCHAR(100))
+BEGIN
+	INSERT INTO `psf_luizedaiana`.`usuarios`
+	(
+	`nome`,
+	`senha`
+    )
+	VALUES
+	(
+	nome,
+	senha
+    );
 END//
 DELIMITER ;
 
@@ -369,6 +407,20 @@ CREATE TABLE IF NOT EXISTS `receitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela psf_luizedaiana.receitas: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela psf_luizedaiana.usuarios
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `codusuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  PRIMARY KEY (`codusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Copiando dados para a tabela psf_luizedaiana.usuarios: ~1 rows (aproximadamente)
+INSERT INTO `usuarios` (`codusuario`, `nome`, `senha`) VALUES
+	(1, 'adm', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
+	(2, 'Luiz', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
